@@ -26,7 +26,17 @@ yuji = UnHechicero 0 1 "Itadori"
 
 clanesPrestigiosos = ["Zenin", "Kamo", "Gojo"]
 
-type Equipo = [Hechicero]
+grupoA :: [Hechicero]
+grupoA = [nobara, yuji, satoru, maki]
 
-grupo :: Equipo
-grupo = [nobara, yuji, satoru, maki]
+estaPreparado :: [Hechicero] -> Bool
+estaPreparado = (>3).length 
+
+esInvencible :: [Hechicero] -> Bool
+esInvencible hechiceros = any esEspecial hechiceros
+
+esEspecial :: Hechicero -> Bool
+esEspecial = (==0).grado
+
+--func :: a -> (b -> (c -> (d -> (e))))
+
